@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>國人健康資訊網</title>
+    <meta charset = "utf-8"> 
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC3ZRrR1wURV2-7CuFeobmVflQSqNqWHg&callback=initMap&libraries=&v=weekly"
+    ></script>
+    
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id = "total">
+    <div id="header">
+         <h1>國人健康資訊網
+          <figcaption>宗旨:讓國人了解目前相關知名有害疾病</figcaption>
+         </h1>
+         <nav> 五大死因
+          <ul>
+            <li><a href = "five_death/cancer.html">惡性腫瘤(癌症)</a></li>
+            <li><a href = "five_death/hear_attack.html">心臟疾病</a></li>
+            <li><a href = "five_death/pneumonia.html">肺炎</a></li>
+            <li><a href = "five_death/Cerebrovascular_disease.html">腦血管疾病</a></li>
+            <li><a href = "five_death/diabetes.html">糖尿病</a></li>
+         </ul>
+         </nav>
+         <nav> 五種儀器介紹
+          <ul>
+            <li><a href = "five_device/器材1.html">惡性腫瘤檢測儀器</a></li>
+            <li><a href = "five_device/器材2.html">心臟疾病檢測儀器</a></li>
+            <li><a href = "five_device/器材3.html">肺炎檢測儀器</a></li>
+            <li><a href = "five_device/器材4.html">腦血管疾病檢測儀器</a></li>
+            <li><a href = "five_device/器材5.html">糖尿病檢測儀器</a></li>
+         </ul>
+         </nav>
+    </div>
+    <div id="body">
+      <div id= "bodyleft">
+        <p>點擊地圖上的縣市，可出現該縣市是在全國中因哪個疾病死亡最高，並且導覽該疾病。</p>
+        <BR>
+        <h1 id = "output"></h1>
+      </div>
+
+      <div id = "map_button">
+        <form id = "choice_year" action = "#"></form>
+          <p>
+            <label>
+                  請選擇年份
+                  <select id = "year">
+                                    <option value = "108">108</option>
+                                    <option value = "107">107</option>
+                  </select>
+                  <input type = "button" id = "button" name = "submit" value = "submit">
+            </label> 
+          </p>
+        </form>
+      </div>
+      <div id="map">
+      </div>
+    </div>
+    <div id="footer">
+      <p><br>
+        © 2020,YZU-1080747<br>
+        All trademarks and registered trademarks appearing on 
+        this site are the property of their respective owners.
+      </p>
+    </div>
+  </div>
+    <!--The div element for the map -->
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>find img</title>
+      <script>
+        var url;
+        var first;
+        var last;
+        url = window.prompt( "Please input URL","https://www.cartoonmad.com/75606/1152/995/");
+        first = window.prompt(  "Please input first page",1 );
+        last = window.prompt(  "Please input last page",17 );
+        first = parseInt(first);
+        last = parseInt(last);
+        
+        while ( first <= last )
+         {
+            var i;
+            if(first<10)
+            {
+              i="00"+first+".jpg";
+            }
+            else
+            {
+              i="0"+first+".jpg";
+              
+            }
+            var iurl=url+i;
+            
+            first++;
+            document.writeln( '<img src="'+iurl+'" alt=" "><br>');
+
+         } 
+        
+      </script>
+   </head>
+   <body>
+         
+   </body>
+</html>

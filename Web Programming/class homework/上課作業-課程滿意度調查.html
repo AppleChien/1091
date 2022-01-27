@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Forms</title>
+   </head>
+   <body>
+    <p>課程滿意度調查</p>
+	<p>
+            <label>請選擇課號:
+               <select name = "class">
+                  <option>CS106</option>
+                  <option>CS125</option>
+                  <option>CS140</option>
+                  <option>CS147</option>
+                  <option>CS149</option>
+                  <option>CS380</option>
+               </select>
+            </label>
+    </p>
+    <p><label>姓名:
+               <input name = "name" type = "text" size = "25">
+            </label>
+	</p>
+	<p><label>電話:
+               <input name = "cellphone" type = "password" size = "25">
+            </label>
+	</p>
+	<p><label>意見:<br>
+            <textarea name = "comments" rows = "4" cols = "36">Enter comments here.</textarea>
+         </label>
+	</p>
+    <p>
+        <strong>為何會修本課程:</strong><br>
+ 
+		<label>
+			<input name = "thingsliked" type = "checkbox" value = "goodpass">好過</label>
+		<label>
+			<input name = "thingsliked" type = "checkbox" value = "friend">跟朋友一起修</label>
+		<label>
+			<input name = "thingsliked" type = "checkbox" value = "just">剛好選到</label>
+		<label>
+			<input name = "thingsliked" type = "checkbox" value = "wantlearn">想學網站設計</label>
+		<label>
+			<input name = "thingsliked" type = "checkbox" value = "other">其他</label>
+	</p>
+ 
+	<p>
+		<strong>對本課程是否滿意:</strong><br>
+		<label>
+		<input name = "howtosite" type = "radio" value = "search engine" checked>非常滿意</label>
+		<label>
+			<input name = "howtosite" type = "radio" value = "link">滿意</label>
+		<label>
+			<input name = "howtosite" type = "radio" value = "deitel.com">普通</label>
+		<label>
+			<input name = "howtosite" type = "radio" value = "book">不滿意</label>
+		<label>
+			<input name = "howtosite" type = "radio" value = "other">非常不滿意</label>
+	</p>
+	<p>
+            <input type = "submit" value = "Submit">
+            <input type = "reset" value = "Clear">
+    </p>
+   </body>
+</html>

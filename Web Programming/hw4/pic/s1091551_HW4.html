@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>s1091551_HW4</title>
+	<style type="text/css">
+		div#box1 {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			border: 1px black solid;
+			width: 800px;
+			height: 600px;
+		}
+
+		div#box2 {
+			position: absolute;
+			top: 0px;
+			left: 820px;
+			border: 1px black solid;
+			width: 400px;
+			height: 600px;
+		}
+
+		div#box3 {
+			position: absolute;
+			top: 620px;
+			left: 0px;
+		}
+	</style>
+</head>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+
+	var box1Image;
+	var picValue = 1;
+	var picCode = 1;
+
+	function start() {
+		var button = document.getElementById("submit");
+		button.addEventListener("click", changebeg, false);
+		box1Image = document.getElementById("boxpic");
+
+		$.ajax({
+			url: "s1091551_HW4.php",
+			data: {
+				min: id,
+				max: id,
+			},
+			type: "POST",
+			datatype: "html",
+			success: function (output) {
+				document.getElementById("out").innerHTML = output;
+			},
+			error: function () {
+				alert("Request Failed.")
+			}
+		});
+	}
+
+	function changebeg() {
+		setImage(box1Image);
+	}
+
+	function setImage(boxImage) {
+		if (picCode == 1)
+			boxImage.setAttribute("src", "bird" + picValue + ".jpg");
+		if (picCode == 2)
+			boxImage.setAttribute("src", "cat" + picValue + ".jpg");
+		if (picCode == 3)
+			boxImage.setAttribute("src", "dog" + picValue + ".jpg");
+
+		picValue++;
+
+		if (picValue == 6) {
+			picValue = 1;
+			picCode++;
+			if (picCode == 4)
+				picCode = 1;
+
+		}
+	}
+	window.addEventListener("load", start, false);
+</script>
+
+<body>
+
+	<div id="box1"><img id="boxpic" name="ImageButton" src="bird1.jpg" alt="box image"></div>
+	<div id="box2"></div>
+
+	<div id="box3">
+		<form action="#">
+			<input id="submit" type="button" value="確認">
+			<input id="reset" type="button" value="重置">
+			<a>下載</a>
+		</form>
+	</div>
+</body>
+
+</html>

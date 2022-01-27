@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Transitions</title>
+      <style type = "text/css">
+         #box1 
+         {
+          position:relative;
+          width:500px;
+          height:100px;
+          margin:0 auto 10px;
+          border:1px solid black;
+          padding:10px;
+        }
+        #box2 
+        {
+          font-size:12px;
+          position:relative;
+          border:1px red;
+          width:60px;
+          height:60px;
+          -webkit-transition: all, 4s;
+        }
+        #box2 p 
+        {
+          text-align:center;
+          padding-top:4px;
+        }
+        #box1:hover #box2 
+        {
+          margin-left:420px;
+          -webkit-border-radius: 30px;
+          -webkit-transform: rotate(360deg);
+        }
+
+      </style>
+   </head>
+   <body>
+      <div id="box1">
+          <div id="box2"><p>Rotate 720</p></div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,295 @@
+
+
+
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Checkout - LeleBaby</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<style>  
+      body,div,td,input{font-size:15px;margin:0px;}
+      select{height:20px;width:300px;}
+      .title{font-size:16px;padding:10px;margin:10px;width:80%;}
+      .text{height:22px;width:300px;border:1px solid #AAAAAA}
+      .line{margin:13px;}
+      .leftDiv{width:150px;float:left;height:22px;line-height:22px;font-weight:bold;}
+      .rightDiv{height:22px;}
+      .button{
+         font-weight:bold;
+         font-size:13px;
+         border-style:solid;
+         text-align:center;
+         border-weight:2px;
+         border-color:#337788;
+      }
+   </style>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+			<br></br>
+				<div  align="center" id="logo">
+					<img src="image/LOGO.png" alt="LOGO" >
+				</div>
+				<div id="navigation">
+					<ul id="primary">
+						
+						<li class="highlight">
+							<a href="first.html">Sale Items</a>
+						</li>
+						<li>
+							<a href="checkout.html">Cart</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+	<form method = "post" action = "s1091551_HW2.php">	
+	<div align="center">
+       <fieldset style='width:75%'>
+        <legend>使用者資訊</legend>
+       
+         <div class='line'>
+           <div align="left" class='leftDiv'>請填寫你的用戶名:</div>
+             <div align="left" class='rightDiv'>
+              <input type="text" name="name" class="text" required/ >
+             </div>
+           </div>
+		   
+		<div class='line'>
+           <div align="left" class='leftDiv'>請填寫你的帳號:</div>
+             <div align="left" class='rightDiv'>
+              <input type="text" name="account" class="text" placeholder="s#######@mail.yzu.edu.tw"
+			  pattern = "s\d{6,7}@mail.yzu.edu.tw" required required/ >
+             </div>
+           </div>
+        
+           
+           <div class='line'>
+           <div align="left" class='leftDiv'>請選擇性別:</div>
+             <div align="left" class='rightDiv'>
+              <input type="radio" name="sex" value="男"  id="sexMale" >
+              <label for="sexMale">男</label>
+              <input type="radio" name="sex" value="女"  id="sexFemale" >
+              <label for="sexFemale">女</label>
+             </div>
+           </div>
+           
+           <div class='line'>
+           <div align="left" class='leftDiv'>請輸入電話:</div>
+             <div align="left" class='rightDiv'>
+              <input type="text" name="phone" class="text" placeholder = "09##-###-###" 
+                  pattern = "09\d{2}-\d{3}-\d{3}" required/ >
+             </div>
+           </div>
+		   
+		   <div class='line'>
+           <div align="left" class='leftDiv'>請輸入地址:</div>
+             <div align="left" class='rightDiv'>
+              <input type="text" name="address" class="text"   required/ >
+             </div>
+           </div>
+        
+		
+           <div class='line'>
+           <div align="left" class='leftDiv'>為何會購買照片:</div>
+             <div align="left" class='rightDiv'>
+              <input type="checkbox" name="interesting" value="照片可愛"  id="i1">
+              <label for="i1">照片可愛</label>
+              <input type="checkbox" name="interesting" value="想送人"  id="i2">
+              <label for="i2">想送人</label>
+              <input type="checkbox" name="interesting" value="想蒐集"  id="i3">
+              <label for="i3">想蒐集</label>
+			  <input type="checkbox" name="interesting" value="其他"  id="i4">
+              <label for="i4">其他</label>
+             </div>
+           </div>
+		   
+           
+        
+	
+	
+		   <br></br>
+			<div id="contents">
+				<div id="checkout">
+					<h4><span>選擇商品</span></h4>
+					<table>
+						<thead>
+							<tr>
+								<th>Order no. 0017893547</th>
+								<th>購買項目</th>
+								<th>數量</th>
+								<th>價錢</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td><img src="image/IMG_9660.JPG" > <b>樂樂寶貝小時候</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value=" 樂樂寶貝小時候"  id="a1"><label for="a1">樂樂寶貝小時候</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0" ></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr> <tr>
+								<td><img src="image/82804.jpg" > <b>樂樂寶貝開車車</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝開車車 "  id="a2"><label for="a2">樂樂寶貝開車車</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr> <tr>
+								<td><img src="image/82805.jpg" > <b>樂樂寶貝討抱抱</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝討抱抱 "  id="a3"><label for="a3">樂樂寶貝討抱抱</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr> <tr>
+								<td><img src="image/82802.jpg" > <b>樂樂寶貝想吃晚餐</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝想吃晚餐 "  id="a4"><label for="a4">樂樂寶貝吃晚餐</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82801.jpg" > <b>樂樂寶貝在椅子裡</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝在椅子裡 "  id="a5"><label for="a5">樂樂寶貝在椅子裡</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82803.jpg" > <b>樂樂寶貝在沙發上</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝在沙發上 "  id="a6"><label for="a6">樂樂寶貝在沙發上</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82798.jpg" > <b>樂樂寶貝準備開始叫</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝準備開始叫 "  id="a7"><label for="a7">樂樂寶貝準備開始叫</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82791.jpg" > <b>樂樂寶貝斜眼看</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝斜眼看 "  id="a8"><label for="a8">樂樂寶貝斜眼看</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82790.jpg" > <b>樂樂寶貝裝可愛</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝裝可愛 "  id="a9"><label for="a9">樂樂寶貝裝可愛</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82789.jpg" > <b>樂樂寶貝近距離</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value=" 樂樂寶貝近距離"  id="a10"><label for="a10">樂樂寶貝近距離</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82799.jpg" > <b>樂樂寶貝舌頭</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝舌頭 "  id="a11"><label for="a11">樂樂寶貝舌頭</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr><tr>
+								<td><img src="image/82806.jpg" > <b>樂樂寶貝想咬衛生紙</b>
+									<p>
+										LeleBabyShop
+									</p></td>
+									<td>
+									<input type="checkbox" name="buy" value="樂樂寶貝想咬衛生紙 "  id="a12"><label for="i12">樂樂寶貝想咬衛生紙</label></td>
+								<td>
+									<input type="number" name="number" min="0" max="10" step="0" value="0"></td>
+								<td class="last"><div>
+										$20 
+									</div></td>
+							</tr>
+						</tbody>
+					</table>
+					<div align="right" style="width:90%">
+					   <input class="submit" type = "submit" value = "去結帳" style="font-size:35px">
+					   <a href="s1091551_HW2.php"></a>
+					</div>
+					</fieldset>
+      </div>
+					 
+				</div>
+			</div>
+		</fieldset>
+			
+					<p class="footnote" align="center" style="color:deepskyblue;">
+						&copy; Copyirght &copy; 2020. <a href="first.html">LeleBaby</a> all rights reserved.
+					</p>
+				
+		</div>
+	</div>
+</body>
+</html>

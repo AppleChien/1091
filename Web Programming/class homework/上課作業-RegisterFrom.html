@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Table</title>
+  </head>
+  <body>
+    <p>register form</p>
+	<table border="1">
+			<tr>
+				<td>Name: </td>
+				<td><input name="name" type="text" size="20"></td>
+				<td>Student ID: </td>
+				<td><input type="tel" placeholder="s#######" pattern="s\d{7}" required /></td>
+			</tr>
+			<tr>
+				<td>Cell Phone: </td>
+				<td><input type="tel" placeholder="09##-###-###" pattern="09\d{2}-\d{3}-\d{3}" required /></td>
+				<td>License Plate: </td>
+				<td><input type="tel" placeholder="###-####" pattern="[A-Z]{3}-[012356789]{4}" required /></td>
+			</tr>
+			<tr>
+				<td>Email: </td>
+				<td colspan="3"><input name="Email" type="text" size="30"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Submit"></td>
+				<td colspan="2"><input type="reset" value="Clear"></td>
+			</tr>
+		</table>
+  </body>
+</html>

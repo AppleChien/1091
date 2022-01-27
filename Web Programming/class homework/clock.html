@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>時鐘</title>
+	<style>
+
+		.clock {
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			margin: 100px auto;
+			position: relative;
+			border:1px solid black;
+		}
+		
+		.number1{
+			position: absolute;
+			top: 0%;
+			left:50%;
+		}
+		.number2{
+			position: absolute;
+			top: 50%;
+			left:95%;
+		}
+		.number3{
+			position: absolute;
+			top: 95%;
+			left:50%;
+		}
+		.number4{
+			position: absolute;
+			top: 50%;
+			left:0%;
+		}
+		
+
+		
+		.cover {
+			width: 250px;
+			height: 250px;
+			background: #fff;
+			position: absolute;
+			border-radius: 50%;
+			top: 50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+
+		.hours,.mins,.seconds {
+			position: absolute;
+			top: 50%;
+			left:50%;
+			transform-origin:center bottom;
+		}
+
+
+		.seconds {
+			width: 6px;
+			height: 80px;
+			background: black 1000px;
+			animation:zhuan 60s infinite steps(60);
+		}
+	
+		@keyframes zhuan{
+			from{
+				transform:translate(-50%,-100%) rotate(180deg);
+			}
+			to {
+				transform:translate(-50%,-100%) rotate(560deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="clock">
+	
+		<div class="number1">12</div>
+		<div class="number2">3</div>
+		<div class="number3">6</div>
+		<div class="number4">9</div>
+		
+		<div class="cover"></div>
+		<div class="hours"></div>
+		<div class="mins"></div>
+		<div class="seconds"></div>
+		<div class="center"></div>
+	</div>
+</body>
+</html>
