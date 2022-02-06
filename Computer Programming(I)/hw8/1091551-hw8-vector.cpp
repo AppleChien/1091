@@ -72,7 +72,7 @@ int main()
 {
    system( "mode con cols=122" );
 
-   ifstream inFile( "D:\\school_hw\\Big1.1\\µ{¦¡³]­p\\MyHW\\20201110\\Test cases.txt", ios::in );
+   ifstream inFile( "Test cases.txt", ios::in );
 
    // exit program if ifstream could not open file
    if( !inFile )
@@ -82,7 +82,7 @@ int main()
       exit( 1 );
    }
 
-   ofstream outFile( "D:\\school_hw\\Big1.1\\µ{¦¡³]­p\\MyHW\\20201110\\Result.txt", ios::out );
+   ofstream outFile( "Result.txt", ios::out );
 
    // exit program if ofstream could not open file
    if( !outFile )
@@ -358,7 +358,7 @@ vector< int > division( vector< int > &dividend, vector< int > &divisor )
    vector< int > remainder( dividend );
    vector< int > buffer( dividend.size() );
 
-   for( size_t i = dividend.size()-divisor.size() ,j=0  ; j< divisor.size(); i++,j++ ) //buffer²¾¦ì
+   for( size_t i = dividend.size()-divisor.size() ,j=0  ; j< divisor.size(); i++,j++ ) //bufferç§»ä½
        buffer[ i ] = divisor[ j ];
 
    int quotientSize = static_cast<int>(dividend.size() - divisor.size());
@@ -369,14 +369,14 @@ vector< int > division( vector< int > &dividend, vector< int > &divisor )
    }
    vector< int > quotient(quotientSize);
    for (size_t i = 0;i < quotient.size();i++)
-       quotient[i] = 0; //quotient¨C¤@¦ì³£©ñ¤J0
+       quotient[i] = 0; //quotientæ¯ä¸€ä½éƒ½æ”¾å…¥0
    for( int k = quotientSize - 1; k >= 0; k-- )
-   {//¦pªGbuffer<=remainder
+   {//å¦‚æžœbuffer<=remainder
        while( less(buffer, remainder ) || equal(buffer, remainder ) )//buffer <= remainder
        {
            remainder = subtraction( remainder,buffer );  //remainder = remainder - buffer
            quotient[ k ]++;
-           if( isZero(remainder) )  //¦pªGremainder=0
+           if( isZero(remainder) )  //å¦‚æžœremainder=0
                return quotient;
        }
        divideByTen(buffer);  //buffer/10 
