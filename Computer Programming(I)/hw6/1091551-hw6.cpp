@@ -68,7 +68,7 @@ int main()
 {
    system( "mode con cols=122" );
 
-   ifstream inFile( "D:\\school_hw\\Big1.1\\µ{¦¡³]­p\\MyHW\\20201021\\Test cases.txt", ios::in );
+   ifstream inFile( "Test cases.txt", ios::in );
 
    // exit program if ifstream could not open file
    if( !inFile )
@@ -78,7 +78,7 @@ int main()
       exit( 1 );
    }
 
-   ofstream outFile( "D:\\school_hw\\Big1.1\\µ{¦¡³]­p\\MyHW\\20201021\\Result.txt", ios::out );
+   ofstream outFile( "Result.txt", ios::out );
 
    // exit program if ofstream could not open file
    if( !outFile )
@@ -381,33 +381,33 @@ void division( int *dividend, int *divisor, int *&quotient, int *&remainder,
    int tempSize = dividendSize;
    int* temp = new int[dividendSize]();
    
-   if (isZero(dividend, dividendSize)) {//¦pªG³Q°£¦¡µ¥©ó0
+   if (isZero(dividend, dividendSize)) {//å¦‚æœè¢«é™¤å¼ç­‰æ–¼0
        reset(quotient, quotientSize);
        reset(remainder, remainderSize);
        return;
    }
-   if (equal(dividend, divisor, dividendSize, divisorSize)) {//¦pªG³Q°£¦¡µ¥©ó°£¦¡
+   if (equal(dividend, divisor, dividendSize, divisorSize)) {//å¦‚æœè¢«é™¤å¼ç­‰æ–¼é™¤å¼
        quotient[0] = 1;
        reset(remainder, remainderSize);
        return;
    }
 
-   for (int i = 0;i <= dividendSize-1 ;i++) {//dividend©ñ¨ìremainder
+   for (int i = 0;i <= dividendSize-1 ;i++) {//dividendæ”¾åˆ°remainder
        remainder[i] = dividend[i];
    }
 
-   if (less(dividend,divisor,dividendSize,divisorSize)) {//¦pªG³Q°£¦¡¤p©ó°£¦¡
+   if (less(dividend,divisor,dividendSize,divisorSize)) {//å¦‚æœè¢«é™¤å¼å°æ–¼é™¤å¼
        reset(quotient,quotientSize);
    }
    else {
 
        int n = dividendSize - divisorSize;
        
-       for (int i = divisorSize - 1;i >= 0;i--) {//buffer²¾¦ì
+       for (int i = divisorSize - 1;i >= 0;i--) {//bufferç§»ä½
            buffer[i + n] = divisor[i];
        }
        quotientSize = n;
-       if (less(dividend,buffer,dividendSize,bufferSize)) {//¦pªGdividend¤p©óbuffer
+       if (less(dividend,buffer,dividendSize,bufferSize)) {//å¦‚æœdividendå°æ–¼buffer
            divideBy10(buffer, bufferSize);//buffer/10
        }
        else
@@ -421,13 +421,13 @@ void division( int *dividend, int *divisor, int *&quotient, int *&remainder,
        
        for (int k = quotientSize - 1;k >= 0;k--) {
            while (less(buffer,remainder,bufferSize,remainderSize)||equal(buffer,remainder,bufferSize,remainderSize))
-           {//¦pªGbuffer<=remainder
+           {//å¦‚æœbuffer<=remainder
                subtraction(remainder, buffer, temp, remainderSize, bufferSize, tempSize);//temp=remainder-buffer
                for (int i = 0;i <= remainderSize - 1;i++)
-                   remainder[i] = temp[i];//temp¦s¦^remainder
+                   remainder[i] = temp[i];//tempå­˜å›remainder
                remainderSize = tempSize;
                quotient[k]++;
-               if (isZero(remainder, remainderSize)) {//¦pªGremainder=0
+               if (isZero(remainder, remainderSize)) {//å¦‚æœremainder=0
                    return;
                }
                
