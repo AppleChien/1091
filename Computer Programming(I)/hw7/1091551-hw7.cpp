@@ -81,7 +81,7 @@ int main()
 {
    system( "mode con cols=122" );
 
-   ifstream inFile( "D:\\school_hw\\Big1.1\\µ{¶°≥]≠p\\MyHW\\20201028\\Test cases.txt", ios::in );
+   ifstream inFile( "Test cases.txt", ios::in );
 
    // exit program if ifstream could not open file
    if( !inFile )
@@ -91,7 +91,7 @@ int main()
       exit( 1 );
    }
 
-   ofstream outFile( "D:\\school_hw\\Big1.1\\µ{¶°≥]≠p\\MyHW\\20201028\\Result.txt", ios::out );
+   ofstream outFile( "Result.txt", ios::out );
 
    // exit program if ofstream could not open file
    if( !outFile )
@@ -388,7 +388,7 @@ void division( HugeInt &dividend, HugeInt &divisor,
         return;
     }
 
-    if (equal(dividend, divisor))   //¶p™G≥Q∞£¶°µ•©Û∞£¶°
+    if (equal(dividend, divisor))   //Â¶ÇÊûúË¢´Èô§ÂºèÁ≠âÊñºÈô§Âºè
     {
         quotient.elems[0] = 1;
         reset(remainder);
@@ -406,7 +406,7 @@ void division( HugeInt &dividend, HugeInt &divisor,
     temp.elems = new int[dividend.size]();
     int k;
     //dividend < divisor
-    if (less(dividend, divisor)) //¶p™G≥Q∞£¶°§p©Û∞£¶°
+    if (less(dividend, divisor)) //Â¶ÇÊûúË¢´Èô§ÂºèÂ∞èÊñºÈô§Âºè
     {
         reset(quotient);  
     }
@@ -414,7 +414,7 @@ void division( HugeInt &dividend, HugeInt &divisor,
     {
         //buffer = divisor shift left by n positions
         int n = dividend.size - divisor.size;
-        for (int i = divisor.size - 1; i >= 0; i--) //buffer≤æ¶Ï
+        for (int i = divisor.size - 1; i >= 0; i--) //bufferÁßª‰Ωç
             buffer.elems[i + n] = divisor.elems[i];
 
         //dividend < buffer
@@ -428,14 +428,14 @@ void division( HugeInt &dividend, HugeInt &divisor,
         quotient.elems = new int[quotient.size]();
 
         for (k = quotient.size - 1; k >= 0; k--)
-        {//¶p™Gbuffer<=remainder
+        {//Â¶ÇÊûúbuffer<=remainder
             while (less(buffer, remainder) || equal(buffer, remainder))//buffer <= remainder
             {
                 subtraction(remainder, buffer, temp);  //temp = remainder - buffer
                 assign(temp, remainder);//remainder = temp
                 //remainder.size = temp.size;
                 quotient.elems[k]++;
-                if (isZero(remainder))  //¶p™Gremainder=0
+                if (isZero(remainder))  //Â¶ÇÊûúremainder=0
                     return;
             }
             divideByTen(buffer);  //buffer/10 
