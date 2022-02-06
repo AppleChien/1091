@@ -41,7 +41,7 @@ const int arraySize = 20;
 
 int main()
 {
-   ifstream inFile( "D:\\school_hw\\Big1.1\\µ{¦¡³]­p\\MyHW\\20200929\\Polynomials.dat", ios::in | ios::binary );
+   ifstream inFile( "Polynomials.dat", ios::in | ios::binary );
 
    // exit program if ifstream could not open file
    if( !inFile )
@@ -180,35 +180,35 @@ bool isZero( int polynomial[], int degree )
 
 // returns true if and only if polynomial1 == polynomial2
 bool equal( int polynomial1[], int polynomial2[], int degree1, int degree2 )
-{//equal¿ù»~ÂI¦b©ó§PÂ_½T»{¯u°²ªº»yªk¿ù»~(check = true;//½T»{¬O¯u)
+{//equaléŒ¯èª¤é»åœ¨æ–¼åˆ¤æ–·ç¢ºèªçœŸå‡çš„èªæ³•éŒ¯èª¤(check = true;//ç¢ºèªæ˜¯çœŸ)
     bool check = false;
-    if (degree1 == degree2) {//°²¦p¨â­Ó¬Û¦P°}¦C¦ì¸m
-        for (int i = 0;i <= degree1;i++) {//±q³Ì§C°}¦C¦ì¸m»¼¼W
-            if (polynomial1[i] == polynomial2[i])//°²¦p³Q°£¦¡»P°£¦¡°}¦C¦ì¸m»P­È¬Û¦P
-                check = true;//½T»{¬O¯u
+    if (degree1 == degree2) {//å‡å¦‚å…©å€‹ç›¸åŒé™£åˆ—ä½ç½®
+        for (int i = 0;i <= degree1;i++) {//å¾æœ€ä½é™£åˆ—ä½ç½®éå¢
+            if (polynomial1[i] == polynomial2[i])//å‡å¦‚è¢«é™¤å¼èˆ‡é™¤å¼é™£åˆ—ä½ç½®èˆ‡å€¼ç›¸åŒ
+                check = true;//ç¢ºèªæ˜¯çœŸ
             else
-                return false;//§_«h¬O°²
+                return false;//å¦å‰‡æ˜¯å‡
         }
     }
-    if (check)//°²¦p½T»{§¹¦¨
-        return true;//¦^¶Ç¬°¯u
+    if (check)//å‡å¦‚ç¢ºèªå®Œæˆ
+        return true;//å›å‚³ç‚ºçœŸ
     else
-        return false;//§_«h¦^¶Ç¬°°²
+        return false;//å¦å‰‡å›å‚³ç‚ºå‡
 }
 
 // polynomial1 = -polynomial2
 void minus( int polynomial1[], int polynomial2[], int &degree1, int degree2 )
 {
-   degree1 = degree2;//³Q´î¼Æ¸ò´î¼Æªº³Ì°ª°}¦C¦ì¸m¬Û¦P
-   for( int i = 0; i <= degree1; i++ )//³Q´î¼Æªº³Ì§C°}¦C¦ì¸m»¼¼W
-      polynomial1[ i ] = -polynomial2[ i ];//³Q´î¼Æ»P´î¼ÆªºÁ`®t­È
+   degree1 = degree2;//è¢«æ¸›æ•¸è·Ÿæ¸›æ•¸çš„æœ€é«˜é™£åˆ—ä½ç½®ç›¸åŒ
+   for( int i = 0; i <= degree1; i++ )//è¢«æ¸›æ•¸çš„æœ€ä½é™£åˆ—ä½ç½®éå¢
+      polynomial1[ i ] = -polynomial2[ i ];//è¢«æ¸›æ•¸èˆ‡æ¸›æ•¸çš„ç¸½å·®å€¼
 }
 
 // addend += adder
 void addition( int addend[], int adder[], int &addendDegree, int adderDegree )
 {
-    for (int i=0;i <= addendDegree;i++) {//³Q¥[¼Æªº³Ì§C°}¦C¦ì¸m»¼¼W
-        addend[i] += adder[i];//³Q¥[¼Æ»P¥[¼ÆªºÁ`©M­È
+    for (int i=0;i <= addendDegree;i++) {//è¢«åŠ æ•¸çš„æœ€ä½é™£åˆ—ä½ç½®éå¢
+        addend[i] += adder[i];//è¢«åŠ æ•¸èˆ‡åŠ æ•¸çš„ç¸½å’Œå€¼
     }
 }
 
@@ -234,10 +234,10 @@ void multiplication( int multiplicand[], int multiplier[], int product[],
                      int multiplicandDegree, int multiplierDegree, int &productDegree )
 {
     productDegree = 0;
-    for (int i = 0;i <= multiplicandDegree;i++) {//³Q­¼¼Æªº³Ì§C°}¦C¦ì¸m»¼¼W      
-        for (int j = 0;j <= multiplierDegree;j++){ //­¼¼Æªº³Ì§C°}¦C¦ì¸m»¼¼W
-            product[j + i] += multiplicand[i] * multiplier[j];//¿nªº°}¦C¦ì¸m¤¤ªºÁ`©M­È
-            productDegree = i + j;//¿nªº°}¦C¦ì¸m
+    for (int i = 0;i <= multiplicandDegree;i++) {//è¢«ä¹˜æ•¸çš„æœ€ä½é™£åˆ—ä½ç½®éå¢      
+        for (int j = 0;j <= multiplierDegree;j++){ //ä¹˜æ•¸çš„æœ€ä½é™£åˆ—ä½ç½®éå¢
+            product[j + i] += multiplicand[i] * multiplier[j];//ç©çš„é™£åˆ—ä½ç½®ä¸­çš„ç¸½å’Œå€¼
+            productDegree = i + j;//ç©çš„é™£åˆ—ä½ç½®
             
         }
     }
@@ -250,24 +250,24 @@ void division( int dividend[], int divisor[], int quotient[], int remainder[],
 {
    if( isZero( dividend, dividendDegree ) )
    {
-      quotientDegree = 0;//³]°Óªº³Ì°ª°}¦C¦ì¸m¬°0
-      quotient[ 0 ] = 0;//³]°Óªº°}¦C¦ì¸m0ªº­È¬°0
+      quotientDegree = 0;//è¨­å•†çš„æœ€é«˜é™£åˆ—ä½ç½®ç‚º0
+      quotient[ 0 ] = 0;//è¨­å•†çš„é™£åˆ—ä½ç½®0çš„å€¼ç‚º0
 
-      remainderDegree = 0;//³]¤@­Ó¼È¦sªº³Ì°ª°}¦C¦ì¸m¬°0
-      remainder[ 0 ] = 0;//³]¼È¦sªº°}¦C¦ì¸m0ªº­È¬°0
+      remainderDegree = 0;//è¨­ä¸€å€‹æš«å­˜çš„æœ€é«˜é™£åˆ—ä½ç½®ç‚º0
+      remainder[ 0 ] = 0;//è¨­æš«å­˜çš„é™£åˆ—ä½ç½®0çš„å€¼ç‚º0
       return;
    }
-   for (int i = 0;i <= dividendDegree;i++)//³Q°£¼Æªº°}¦C³Ì§C¦ì¸m»¼¼W
-       remainder[i] = dividend[i];//±N³Q°£¼Æ°}¦Cªº­È¦s¨ì¼È¦s°}¦C¤¤
-   remainderDegree = dividendDegree;//³Q°£¦¡ªº³Ì°ª°}¦C¦ì¸mµ¥©ó¼È¦sªº³Ì°ª°}¦C¦ì¸m
+   for (int i = 0;i <= dividendDegree;i++)//è¢«é™¤æ•¸çš„é™£åˆ—æœ€ä½ä½ç½®éå¢
+       remainder[i] = dividend[i];//å°‡è¢«é™¤æ•¸é™£åˆ—çš„å€¼å­˜åˆ°æš«å­˜é™£åˆ—ä¸­
+   remainderDegree = dividendDegree;//è¢«é™¤å¼çš„æœ€é«˜é™£åˆ—ä½ç½®ç­‰æ–¼æš«å­˜çš„æœ€é«˜é™£åˆ—ä½ç½®
    
-   quotientDegree = dividendDegree - divisorDegree;//°Ó¦¡ªº³Ì°ª°}¦C¦ì¸mµ¥©ó³Q°£¦¡ªº³Ì°ª°}¦C¦ì¸m´î°£¦¡ªº³Ì°ª°}¦C¦ì¸m
+   quotientDegree = dividendDegree - divisorDegree;//å•†å¼çš„æœ€é«˜é™£åˆ—ä½ç½®ç­‰æ–¼è¢«é™¤å¼çš„æœ€é«˜é™£åˆ—ä½ç½®æ¸›é™¤å¼çš„æœ€é«˜é™£åˆ—ä½ç½®
 
    int x = remainderDegree;
-   for (int i = dividendDegree - divisorDegree;i >= 0;i--,x--) {//°Óªº°}¦C³Ì°ª¦ì¸m»¼´î
-       quotient[i] = remainder[x] / divisor[divisorDegree];//°Óªº­Èµ¥©ó³Q°£¼Æªº­È°£¥H°£¦¡ªº³Ì°ª¦¸¤èªº­È
-       for (int j = 0;divisorDegree + j >= 0;j--) {//°£¦¡ªº°}¦C³Ì°ª¦ì¸m»¼´î
-           remainder[x + j] -= divisor[divisorDegree + j] * quotient[i];//³Q°£¦¡´î°£¦¡­¼°Óªº­È
+   for (int i = dividendDegree - divisorDegree;i >= 0;i--,x--) {//å•†çš„é™£åˆ—æœ€é«˜ä½ç½®éæ¸›
+       quotient[i] = remainder[x] / divisor[divisorDegree];//å•†çš„å€¼ç­‰æ–¼è¢«é™¤æ•¸çš„å€¼é™¤ä»¥é™¤å¼çš„æœ€é«˜æ¬¡æ–¹çš„å€¼
+       for (int j = 0;divisorDegree + j >= 0;j--) {//é™¤å¼çš„é™£åˆ—æœ€é«˜ä½ç½®éæ¸›
+           remainder[x + j] -= divisor[divisorDegree + j] * quotient[i];//è¢«é™¤å¼æ¸›é™¤å¼ä¹˜å•†çš„å€¼
        }
        
    }
