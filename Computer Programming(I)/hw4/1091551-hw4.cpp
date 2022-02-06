@@ -51,7 +51,7 @@ const int arraySize = 20;
 
 int main()
 {
-   ifstream inFile( "D:\\school_hw\\Big1.1\\µ{¦¡³]­p\\MyHW\\20201005\\Polynomials.dat", ios::in | ios::binary );
+   ifstream inFile( "Polynomials.dat", ios::in | ios::binary );
 
    // exit program if ifstream could not open file
    if( !inFile )
@@ -196,22 +196,22 @@ bool isZero( int coefficient[], int size )
 bool equal( int coefficient1[], int exponent1[], int size1,
             int coefficient2[], int exponent2[], int size2 )
 {
-    /*if (size1 == size2) {//§PÂ_size¬O§_¬Û¦P
-        for (int i = 0;i <= size1;i++) {//size¥Ñ§C¦Ü°ª»¼¼W
-            if (coefficient1[i] == coefficient2[i]) {//§PÂ_«Y¼Æ¬O§_¬Û¦P
-                if (exponent1[i] == exponent2[i]) {//§PÂ_¦¸¤è¬O§_¬Û¦P
-                    continue;//¦^¨ì°j°é¶}ÀYÄ~Äò§PÂ_       
+    /*if (size1 == size2) {//åˆ¤æ–·sizeæ˜¯å¦ç›¸åŒ
+        for (int i = 0;i <= size1;i++) {//sizeç”±ä½è‡³é«˜éå¢
+            if (coefficient1[i] == coefficient2[i]) {//åˆ¤æ–·ä¿‚æ•¸æ˜¯å¦ç›¸åŒ
+                if (exponent1[i] == exponent2[i]) {//åˆ¤æ–·æ¬¡æ–¹æ˜¯å¦ç›¸åŒ
+                    continue;//å›åˆ°è¿´åœˆé–‹é ­ç¹¼çºŒåˆ¤æ–·       
                 }
                 else
-                    return false;//­Y¤£¦P«h¦^¶Ç§_
+                    return false;//è‹¥ä¸åŒå‰‡å›å‚³å¦
             }
             else
-                return false;//­Y¤£¦P«h¦^¶Ç§_
+                return false;//è‹¥ä¸åŒå‰‡å›å‚³å¦
         }
-        return true;//­Y§PÂ_¨ì³Ì«á¬Ò¬Û¦P«h¦^¶Ç¹ï
+        return true;//è‹¥åˆ¤æ–·åˆ°æœ€å¾Œçš†ç›¸åŒå‰‡å›å‚³å°
     }
     else
-     return false;//­Y¤£¦P«h¦^¶Ç§_*/
+     return false;//è‹¥ä¸åŒå‰‡å›å‚³å¦*/
     if (size1 != size2)
     {
         return false;
@@ -284,42 +284,42 @@ void addition( int addendCoef[], int addendExpon[], int &addendSize,
    while( i < addendSize && j < adderSize )
    {
              
-         if (addendExpon[i] < adderExpon[j]) {//­Y³Q¥[¼Æ°}¦C¦ì¸m¦¸¤è¤p©ó¥[¼Æ°}¦C¦ì¸m¦¸¤è
-              sumCoef[k] = addendCoef[i];//³Q¥[¼Æ¦ì¸mªº­È©ñ¶iÁ`©M¦ì¸m
-              sumExpon[k] = addendExpon[i];//³Q¥[¼Æ³Ì°ª¦¸¤è°}¦C¦ì¸m©ñ¶iÁ`©M³Ì°ª¦¸¤è°}¦C¦ì¸m
+         if (addendExpon[i] < adderExpon[j]) {//è‹¥è¢«åŠ æ•¸é™£åˆ—ä½ç½®æ¬¡æ–¹å°æ–¼åŠ æ•¸é™£åˆ—ä½ç½®æ¬¡æ–¹
+              sumCoef[k] = addendCoef[i];//è¢«åŠ æ•¸ä½ç½®çš„å€¼æ”¾é€²ç¸½å’Œä½ç½®
+              sumExpon[k] = addendExpon[i];//è¢«åŠ æ•¸æœ€é«˜æ¬¡æ–¹é™£åˆ—ä½ç½®æ”¾é€²ç¸½å’Œæœ€é«˜æ¬¡æ–¹é™£åˆ—ä½ç½®
               i++;
               k++;
-             //­Y³Q¥[¼Æ°}¦C¦ì¸m¤w¸g¨ì³Ì«á¤@¶µ¦ı¥[¼Æ°}¦C¦ì¸mÁÙ¨S¨ì³Ì«á¤@¶µ
+             //è‹¥è¢«åŠ æ•¸é™£åˆ—ä½ç½®å·²ç¶“åˆ°æœ€å¾Œä¸€é …ä½†åŠ æ•¸é™£åˆ—ä½ç½®é‚„æ²’åˆ°æœ€å¾Œä¸€é …
          }
-          else if (addendExpon[i] > adderExpon[j]) {//­Y¥[¼Æ°}¦C¦ì¸m¦¸¤è¤p©ó³Q¥[¼Æ°}¦C¦ì¸m¦¸¤è
-              sumCoef[k] = adderCoef[j];//­Y³Q¥[¼Æ°}¦C¦ì¸m¦¸¤è¤p©ó¥[¼Æ¦¸¤è
-              sumExpon[k] = adderExpon[j];//¥[¼Æ³Ì°ª¦¸¤è°}¦C¦ì¸m©ñ¶iÁ`©M³Ì°ª¦¸¤è°}¦C¦ì¸m
+          else if (addendExpon[i] > adderExpon[j]) {//è‹¥åŠ æ•¸é™£åˆ—ä½ç½®æ¬¡æ–¹å°æ–¼è¢«åŠ æ•¸é™£åˆ—ä½ç½®æ¬¡æ–¹
+              sumCoef[k] = adderCoef[j];//è‹¥è¢«åŠ æ•¸é™£åˆ—ä½ç½®æ¬¡æ–¹å°æ–¼åŠ æ•¸æ¬¡æ–¹
+              sumExpon[k] = adderExpon[j];//åŠ æ•¸æœ€é«˜æ¬¡æ–¹é™£åˆ—ä½ç½®æ”¾é€²ç¸½å’Œæœ€é«˜æ¬¡æ–¹é™£åˆ—ä½ç½®
               j++;
               k++;
-              //­Y¥[¼Æ°}¦C¦ì¸m¤w¸g¨ì³Ì«á¤@¶µ¦ı³Q¥[¼Æ°}¦C¦ì¸mÁÙ¨S¨ì³Ì«á¤@¶µ
+              //è‹¥åŠ æ•¸é™£åˆ—ä½ç½®å·²ç¶“åˆ°æœ€å¾Œä¸€é …ä½†è¢«åŠ æ•¸é™£åˆ—ä½ç½®é‚„æ²’åˆ°æœ€å¾Œä¸€é …
           }
-          else if (addendExpon[i]==adderExpon[j]) {//­Y³Q¥[¼Æ°}¦C¦ì¸m¦¸¤èµ¥©ó¥[¼Æ°}¦C¦ì¸m¦¸¤è
+          else if (addendExpon[i]==adderExpon[j]) {//è‹¥è¢«åŠ æ•¸é™£åˆ—ä½ç½®æ¬¡æ–¹ç­‰æ–¼åŠ æ•¸é™£åˆ—ä½ç½®æ¬¡æ–¹
              if (addendCoef[i] + adderCoef[j] != 0) {
-                 sumCoef[k] = addendCoef[i] + adderCoef[j];//³Q¥[¼Æ©M¥[¼ÆªºÁ`©M¥[¦^Á`©M
-                 sumExpon[k] = addendExpon[i];//³Q¥[¼Æ©M¥[¼ÆªºÁ`©M³Ì°ª¦¸¤è°}¦C¦ì¸m©ñ¶iÁ`©M³Ì°ª¦¸¤è°}¦C¦ì¸m  
+                 sumCoef[k] = addendCoef[i] + adderCoef[j];//è¢«åŠ æ•¸å’ŒåŠ æ•¸çš„ç¸½å’ŒåŠ å›ç¸½å’Œ
+                 sumExpon[k] = addendExpon[i];//è¢«åŠ æ•¸å’ŒåŠ æ•¸çš„ç¸½å’Œæœ€é«˜æ¬¡æ–¹é™£åˆ—ä½ç½®æ”¾é€²ç¸½å’Œæœ€é«˜æ¬¡æ–¹é™£åˆ—ä½ç½®  
                  k++;
              }
              i++;
              j++;
           }
    }
-   while (i < addendSize)//¥[¼Æ¤ñ³Q¥[¼Æ¦h¶µ
+   while (i < addendSize)//åŠ æ•¸æ¯”è¢«åŠ æ•¸å¤šé …
    {
-       sumCoef[k] = addendCoef[i];//³Ñ¤Uªº©ñ¨ìÁ`©M
-       sumExpon[k] = addendExpon[i];//³Ñ¤Uªº©ñ¨ìÁ`©M
+       sumCoef[k] = addendCoef[i];//å‰©ä¸‹çš„æ”¾åˆ°ç¸½å’Œ
+       sumExpon[k] = addendExpon[i];//å‰©ä¸‹çš„æ”¾åˆ°ç¸½å’Œ
        i++;
        k++;
 
    }
-   while (j < adderSize)//³Q¥[¼Æ¤ñ¥[¼Æ¦h¶µ
+   while (j < adderSize)//è¢«åŠ æ•¸æ¯”åŠ æ•¸å¤šé …
    {
-       sumCoef[k] = adderCoef[j];//³Ñ¤Uªº©ñ¨ìÁ`©M
-       sumExpon[k] = adderExpon[j];//³Ñ¤Uªº©ñ¨ìÁ`©M
+       sumCoef[k] = adderCoef[j];//å‰©ä¸‹çš„æ”¾åˆ°ç¸½å’Œ
+       sumExpon[k] = adderExpon[j];//å‰©ä¸‹çš„æ”¾åˆ°ç¸½å’Œ
        j++;
        k++;
 
@@ -380,15 +380,15 @@ void multiplication( int multiplicandCoef[], int multiplicandExpon[], int multip
        int bufferCoef[arraySize] = {};
        int bufferExpon[arraySize] = {};
        int bufferSize = multiplicandSize;
-       for (int i = 0;i < multiplierSize;i++) {//­¼¼Æ°}¦C¦ì¸m¥Ñ§C¦Ü°ª»¼¼W
-           for (int j = 0;j < multiplicandSize;j++) {//³Q­¼¼Æ°}¦C¦ì¸m¥Ñ§C¦Ü°ª»¼¼W
+       for (int i = 0;i < multiplierSize;i++) {//ä¹˜æ•¸é™£åˆ—ä½ç½®ç”±ä½è‡³é«˜éå¢
+           for (int j = 0;j < multiplicandSize;j++) {//è¢«ä¹˜æ•¸é™£åˆ—ä½ç½®ç”±ä½è‡³é«˜éå¢
                
-               bufferCoef[j] = multiplicandCoef[j] * multiplierCoef[i];//³Q­¼¼Æ©M­¼¼Æ¤§¿nªº«Y¼Æ¦s¦Übuffer«Y¼Æ
-               bufferExpon[j] = multiplicandExpon[j] + multiplierExpon[i];//³Q­¼¼Æ©M­¼¼Æ¤§©Mªº¦¸¤è¦s¦Übuffer¦¸¤è
+               bufferCoef[j] = multiplicandCoef[j] * multiplierCoef[i];//è¢«ä¹˜æ•¸å’Œä¹˜æ•¸ä¹‹ç©çš„ä¿‚æ•¸å­˜è‡³bufferä¿‚æ•¸
+               bufferExpon[j] = multiplicandExpon[j] + multiplierExpon[i];//è¢«ä¹˜æ•¸å’Œä¹˜æ•¸ä¹‹å’Œçš„æ¬¡æ–¹å­˜è‡³bufferæ¬¡æ–¹
                
            }
            addition(productCoef, productExpon, productSize, bufferCoef, bufferExpon, bufferSize);
-           //©I¥s¥[ªk±Nproduct©Mbuffer¬Û¥[
+           //å‘¼å«åŠ æ³•å°‡productå’Œbufferç›¸åŠ 
        }
    }
 }
@@ -417,67 +417,67 @@ void division( int dividendCoef[], int dividendExpon[], int dividendSize,
 
    // remainder = dividend
    remainderSize = dividendSize;
-   for( int i = 0; i < remainderSize; i++ )//³Q°£¦¡¦¸¤è¥Ñ§C¦Ü°ª»¼¼W
+   for( int i = 0; i < remainderSize; i++ )//è¢«é™¤å¼æ¬¡æ–¹ç”±ä½è‡³é«˜éå¢
    {
       remainderCoef[ i ] = dividendCoef[ i ];
       remainderExpon[ i ] = dividendExpon[ i ];
    }
-   //°Ó¦¡°}¦C¤j¤pµ¥©ó(³Q°£¦¡°}¦C¤j¤p´î1)-(°£¦¡°}¦C¤j¤p´î1)+1
+   //å•†å¼é™£åˆ—å¤§å°ç­‰æ–¼(è¢«é™¤å¼é™£åˆ—å¤§å°æ¸›1)-(é™¤å¼é™£åˆ—å¤§å°æ¸›1)+1
    quotientSize = dividendExpon[ dividendSize - 1 ] - divisorExpon[ divisorSize - 1 ] + 1;
    
    for( int i = quotientSize - 1; i >= 0; i--)
-   {   //­Y³Q°£¦¡³Ì°ª¦¸¤èµ¥©ó0©Î¬O³Q°£¦¡¦¸¤è¤p©ó°£¦¡¦¸¤è(­n°£¤§«e³£¥ı§PÂ_¦n)
+   {   //è‹¥è¢«é™¤å¼æœ€é«˜æ¬¡æ–¹ç­‰æ–¼0æˆ–æ˜¯è¢«é™¤å¼æ¬¡æ–¹å°æ–¼é™¤å¼æ¬¡æ–¹(è¦é™¤ä¹‹å‰éƒ½å…ˆåˆ¤æ–·å¥½)
        /*if (remainderCoef[remainderSize-1] == 0 ||
            remainderExpon[remainderSize - 1] < divisorExpon[divisorSize - 1])
        {
-           for (int j = 0;j < i;j++) {//±q³Ì«á¤@¶µ¶}©l¥k²¾
+           for (int j = 0;j < i;j++) {//å¾æœ€å¾Œä¸€é …é–‹å§‹å³ç§»
                for (int k = 0;k <= quotientSize - 1;k++) {
                    quotientCoef[k] = quotientCoef[k + j];
                    quotientExpon[k] = quotientExpon[k + j];
                    
                }
-               quotientSize--;//¨C²¾1¦¸size´î1
+               quotientSize--;//æ¯ç§»1æ¬¡sizeæ¸›1
            }
-           break;//­Y§PÂ_§¹«hµ²§ô°j°é
+           break;//è‹¥åˆ¤æ–·å®Œå‰‡çµæŸè¿´åœˆ
        }*/
-       //°Ó¦¡ªº­Èµ¥©ó³Q°£¦¡ªº­È°£¥H°£¦¡ªº­È
+       //å•†å¼çš„å€¼ç­‰æ–¼è¢«é™¤å¼çš„å€¼é™¤ä»¥é™¤å¼çš„å€¼
        quotientCoef[i] = remainderCoef[remainderSize - 1] / divisorCoef[divisorSize - 1];
-       //°Ó¦¡ªº¦¸¤èµ¥©ó³Q°£¦¡ªº¦¸¤è´î±¼°£¦¡ªº¦¸¤è
+       //å•†å¼çš„æ¬¡æ–¹ç­‰æ–¼è¢«é™¤å¼çš„æ¬¡æ–¹æ¸›æ‰é™¤å¼çš„æ¬¡æ–¹
        quotientExpon[i] = remainderExpon[remainderSize - 1 ] -divisorExpon[divisorSize - 1];
       
        //monomial = quotient[i]
        int monomialSize=1;
        int monomialCoef[1] = {};
        int monomialExpon[1] = {};
-       monomialCoef[0] = quotientCoef[i];//±N°Ó¦¡«Y¼Æªº­È¼È¦s¨ìmonomial
-       monomialExpon[0] = quotientExpon[i];//±N°Ó¦¡¦¸¤èªº­È¼È¦s¨ìmonomial
+       monomialCoef[0] = quotientCoef[i];//å°‡å•†å¼ä¿‚æ•¸çš„å€¼æš«å­˜åˆ°monomial
+       monomialExpon[0] = quotientExpon[i];//å°‡å•†å¼æ¬¡æ–¹çš„å€¼æš«å­˜åˆ°monomial
 
-       //buffer = divisor * monomial;±N°£¦¡¸ò°Óªº¿n¼È¦s¨ìbuffer
+       //buffer = divisor * monomial;å°‡é™¤å¼è·Ÿå•†çš„ç©æš«å­˜åˆ°buffer
        int bufferCoef[arraySize] = {};
        int bufferExpon[arraySize] = {};
        int bufferSize = divisorSize;
        multiplication(divisorCoef, divisorExpon, divisorSize, 
            monomialCoef, monomialExpon, monomialSize,bufferCoef,bufferExpon,bufferSize);
-       // remainder -= buffer;remainder´îbuufferªº­È¦s¦^remainder
+       // remainder -= buffer;remainderæ¸›buufferçš„å€¼å­˜å›remainder
        subtraction(remainderCoef, remainderExpon, remainderSize,bufferCoef,bufferExpon,bufferSize);
 
-       //­Y³Q°£¦¡³Ì°ª¦¸¤èµ¥©ó0©Î¬O³Q°£¦¡¦¸¤è¤p©ó°£¦¡¦¸¤è    
+       //è‹¥è¢«é™¤å¼æœ€é«˜æ¬¡æ–¹ç­‰æ–¼0æˆ–æ˜¯è¢«é™¤å¼æ¬¡æ–¹å°æ–¼é™¤å¼æ¬¡æ–¹    
        if (remainderCoef[remainderSize - 1] == 0 || remainderExpon[remainderSize - 1] < divisorExpon[divisorSize - 1])
        {
            
-           for (int j = i; j > 0; j--)//°Ó¦¡©¹¥k²¾i¦¸
+           for (int j = i; j > 0; j--)//å•†å¼å¾€å³ç§»iæ¬¡
            {
-               for (int k = j; k < quotientSize; k++)//±q°Ó¦¡³Ì§C¶µ¶}©l¥k²¾
+               for (int k = j; k < quotientSize; k++)//å¾å•†å¼æœ€ä½é …é–‹å§‹å³ç§»
                {
                    quotientCoef[k - 1] = quotientCoef[k];
                    quotientExpon[k - 1] = quotientExpon[k];
                }
-               quotientSize--;//¥k²¾¤§«á°Ó¦¡¤j¤p´î1
-               quotientCoef[quotientSize] = 0;//¥k²¾¤§«á°Ó¦¡³Ì°ª¦¸¤è«Y¼Æ=0
-               quotientExpon[quotientSize] = 0;//¥k²¾¤§«á°Ó¦¡³Ì°ª¦¸¤è=0
+               quotientSize--;//å³ç§»ä¹‹å¾Œå•†å¼å¤§å°æ¸›1
+               quotientCoef[quotientSize] = 0;//å³ç§»ä¹‹å¾Œå•†å¼æœ€é«˜æ¬¡æ–¹ä¿‚æ•¸=0
+               quotientExpon[quotientSize] = 0;//å³ç§»ä¹‹å¾Œå•†å¼æœ€é«˜æ¬¡æ–¹=0
            }
 
-           break;//­Y§PÂ_§¹«hµ²§ô°j°é
+           break;//è‹¥åˆ¤æ–·å®Œå‰‡çµæŸè¿´åœˆ
        }
            
    }
